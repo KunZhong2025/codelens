@@ -1,0 +1,3 @@
+# 站点构建产物与本地预览缓存
+.playwright-mcp/
+.preview-*.png
