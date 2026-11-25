@@ -236,9 +236,9 @@ h2{font-size:clamp(21px,3.6vw,28px)}
         </p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="https://github.com/KunZhong2025/codelens/releases">下载 Windows 版</a>
-          <a class="btn" href="#get-wx">微信扫码即用</a>
+          <a class="btn" href="https://github.com/KunZhong2025/codelens/releases/tag/android-v1.0.0">下载 Android 版</a>
         </div>
-        <p class="hero-note">v1.1.0 · Windows 10/11 x64 · 未签名应用</p>
+        <p class="hero-note">Windows v1.1.0 · Android v1.0.0 · <a href="#get-wx" style="color:var(--ash);border-bottom:1px solid var(--line);text-decoration:none">微信小程序扫码即用</a></p>
       </div>
 
       <div class="link" role="img" aria-label="示意图：一台设备把二维码显示在屏幕上，另一台设备用摄像头接收，中间的光束穿过取景框">
@@ -297,7 +297,7 @@ h2{font-size:clamp(21px,3.6vw,28px)}
   <section class="sec" id="get">
     <div class="shell">
       <div class="sec-head"><span class="idx">02 / 下载</span><h2>三端，同一套协议</h2></div>
-      <p class="sec-sub">Windows 客户端已可用，微信小程序已上线。同一段内容，用哪一端发、用哪一端收都行。</p>
+      <p class="sec-sub">Windows 客户端、Android 客户端与微信小程序都已可用。同一段内容，用哪一端发、用哪一端收都行。</p>
       <div class="dl">
         <div class="dl-card">
           <div class="dl-platform">🖥 Windows 客户端</div>
@@ -306,16 +306,16 @@ h2{font-size:clamp(21px,3.6vw,28px)}
           <a class="btn btn-primary" href="https://github.com/KunZhong2025/codelens/releases/tag/v1.1.0">前往下载</a>
         </div>
         <div class="dl-card">
+          <div class="dl-platform">🤖 Android 客户端</div>
+          <span class="dl-status st-ok">可下载 · v1.0.0</span>
+          <p class="dl-desc">Android 7.0 及以上。安装包只声明相机权限，没有网络权限；识别在机内离线完成，不下载任何模型。</p>
+          <a class="btn" href="https://github.com/KunZhong2025/codelens/releases/tag/android-v1.0.0">前往下载</a>
+        </div>
+        <div class="dl-card">
           <div class="dl-platform">📱 字越方格（微信小程序）</div>
           <span class="dl-status st-ok">已上线 · v0.2.2</span>
           <p class="dl-desc">手机扫码即用，无需安装。已与 Windows 端完成双向真机互通验收，文本与文件都能传。</p>
           <a class="btn" href="#get-wx">扫码入口</a>
-        </div>
-        <div class="dl-card">
-          <div class="dl-platform">🤖 Android</div>
-          <span class="dl-status st-soon">开发中</span>
-          <p class="dl-desc">原生 Android 客户端正在开发，计划与现有两端共用同一套传输协议。</p>
-          <span class="btn" aria-disabled="true" style="opacity:.45;cursor:default">即将推出</span>
         </div>
 
         <div class="dl-wx" id="get-wx">
@@ -397,11 +397,13 @@ h2{font-size:clamp(21px,3.6vw,28px)}
     ["文件名会被加密吗？",
      "不会。载荷信封里带文件名字段，所以文件名是明文传输的。码见不对字节内容做任何假设——需要保密时，请先用你自己的工具加密，并且把包名改成中性名称再传。"],
     ["手机能用吗？",
-     "能，微信小程序版已经上线。微信里扫一扫就能打开，不用安装、不用注册。它已经通过与 Windows 端的双向真机互通验收：文本和文件都跑通，接收端按字节数和 SHA-256 核对一致。"],
+     "能，两种方式都行：装 Android 客户端，或者微信里扫一扫打开「字越方格」小程序，后者连安装都省了。两端都已与 Windows 完成真机双向互通验收——文本和文件都跑通，接收端按字节数和 SHA-256 与发送端核对一致。"],
     ["一次能传多大的东西？",
      "短内容用单张标准二维码；超过单码容量后自动切分成动态码流，文本按字节流处理。文件上限取决于单次会话的容量设置，太大的文件建议先切分或压缩。"],
     ["Windows 一直弹 SmartScreen 怎么办？",
-     "这是未签名应用的正常提示，不是故障。点「更多信息」→「仍要运行」即可。后续版本会考虑配置代码签名。"]
+     "这是未签名应用的正常提示，不是故障。点「更多信息」→「仍要运行」即可。后续版本会考虑配置代码签名。"],
+    ["Android 安装时提示有风险，正常吗？",
+     "正常。码见没有在任何应用商店上架，国产系统对未知来源的安装包都会弹这类提示，选「继续安装」即可。装完可以用 apksigner verify --print-certs 核对签名证书，或在 Release 页面核对安装包的 SHA-256。"]
   ];
   var list=document.getElementById('faq-list');
   FAQ.forEach(function(row,i){
