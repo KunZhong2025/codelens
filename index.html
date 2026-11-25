@@ -176,7 +176,8 @@ h2{font-size:clamp(21px,3.6vw,28px)}
 
 /* ---------- shots ---------- */
 .shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-@media(max-width:860px){.shots{grid-template-columns:1fr}}
+.shots-3{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:18px}
+@media(max-width:860px){.shots{grid-template-columns:1fr}.shots-3{grid-template-columns:1fr}}
 .shot{border:1px solid var(--line);background:var(--panel);padding:10px;border-radius:3px;margin:0}
 .shot img{width:100%;height:auto;display:block;border-radius:2px}
 .shot figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--ash-dim);padding:10px 2px 2px}
@@ -340,8 +341,8 @@ h2{font-size:clamp(21px,3.6vw,28px)}
 
   <section class="sec" id="shots">
     <div class="shell">
-      <div class="sec-head"><span class="idx">03 / 界面</span><h2>两端各长这样</h2></div>
-      <p class="sec-sub">发送端与接收端是同一套视觉语言，只是把角色换了个位置。</p>
+      <div class="sec-head"><span class="idx">03 / 界面</span><h2>各端各长这样</h2></div>
+      <p class="sec-sub">发送端与接收端是同一套视觉语言，只是把角色换了个位置；Android 上也是同一套。</p>
       <div class="shots">
         <figure class="shot">
           <img src="assets/pc-generator-view.png" alt="发送端界面：光通信发送，可传输文本或文件，下方为动态二维码播放区" width="914" height="1248">
@@ -354,6 +355,20 @@ h2{font-size:clamp(21px,3.6vw,28px)}
         <figure class="shot shot-wide">
           <img src="assets/pc-first-run-notice.png" alt="首次运行时显示的使用须知：确认传输内容有合法授权、屏幕内容为明文、本工具不提供加密与防伪能力" width="640" height="450">
           <figcaption>首次运行 · 使用须知</figcaption>
+        </figure>
+      </div>
+      <div class="shots shots-3">
+        <figure class="shot">
+          <img src="assets/android-sender.jpg" alt="Android 发送端：输入文本、选择本地文件、三档传输档位与开始光传输按钮" width="608" height="1294">
+          <figcaption>Android · 光传输发送</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/android-scanner.jpg" alt="Android 扫码接收：取景框套住屏幕上的二维码，提示正在识别，底部显示接收进度 47%" width="608" height="1294">
+          <figcaption>Android · 扫码接收</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/android-result.jpg" alt="Android 接收结果弹窗：完整文本、SHA-256 校验值与复制按钮" width="608" height="1294">
+          <figcaption>Android · 文本传输成功</figcaption>
         </figure>
       </div>
     </div>
